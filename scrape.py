@@ -2,11 +2,11 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def crawling(website_link, link_class):
+def scrape(website_link, link_class):
     """
     Args: website_link = string; link of website to be crawled
           link_class = string; class name for job link on website
-    Returns: jobs_link = list; list of jobs
+    Returns: response = list; list of events
     """
 
     # get content of website and parse it
