@@ -1,1 +1,1 @@
-app: python scheduler.py
+app: python src/scheduler.py
