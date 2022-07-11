@@ -1,15 +1,14 @@
 import schedule
 import event
-import yaml
+import os
 
 chat_id = 1317888738
 
-with open('config.yaml') as f:
-    config = yaml.load(f, Loader=yaml.FullLoader)
+scrape_interval = os.environ.get('AWK-SCRAPE')
 
-if config['scrape_every'] == 1:
+if scrape_interval == 1:
     schedule.every().minute.at(":01").do(event.check_events)
-if config['scrape_every'] == 60:
+if scrape_interval == 60:
     schedule.every().hour.at(":01").do(event.check_events)
 
 while True:
